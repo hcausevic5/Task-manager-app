@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> My application </title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="icon" href="/img/logo.png">
+        <script src="/js/getUser.js"></script>
+    </head>
+    <body>
+        {{>header}}
+        <div class="main_content">
+            <div class="userData" id="userData">
+                <h3> My profile </h3>
+
+                <div class="wrapper">
+                    <div class="photo">
+                        <div name="image" id="image">
+                            {{#if imagePath}}
+                                <img id="img" src="{{imagePath}}" alt="Profile picture"> 
+                            {{/if}}
+                        </div>
+                        <form action="/users/me/avatar" method="POST" enctype="multipart/form-data">
+                            <input type="file" name="avatar" accept="image/*">
+                            <input type="submit" id="submitButt"><button id="del1" onclick="deleteCurrentPicture()"> Delete current picture </button>
+                        </form>
+                    </div>
+                    <div class="data" id="data">
+                        {{#if userData}}
+                            <div id="ddata">
+                                <p> Name: {{userData.name}} </p>
+                                <p> Age: {{userData.age}} </p>
+                                <p> Email: {{userData.email}} </p>
+                            </div>
+                            <div class="edit">
+                                <button onclick="editUserData()"> Edit account </button> <button id="del2" onclick="deleteAccount()"> Delete account </button>
+                            </div>
+                            <div class="changeData" id="changeData">
+                                <h3> Change your informations </h3>
+                                <form>
+                                    <label> Name </label>
+                                    <input type="text" id="changeName" name="name" required>
+                                    <label> Age </label>
+                                    <input type="number" id="changeAge" name="age" required>
+                                    <label> Email </label>
+                                    <input type="email" id="changeEmail" name="email" required>
+                                </form>
+                                <div class="updateDataDiv">
+                                    <button id="changeCancel" onclick="closeChange()"> Cancel </button><button id="changeSubmit" onclick="executeChange()" > Submit </button>
+                                </div>
+                                
+                            </div>
+                        {{/if}}
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        {{>footer}}
+    </body>
+</html>

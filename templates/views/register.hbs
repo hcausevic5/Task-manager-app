@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> My application </title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="icon" href="/img/logo.png">
+    </head>
+    <body>
+        <div class="centered-form">
+            <div class="centered-form__box">
+                <h1> {{ formName }} </h1>
+                <form action="/users" method="POST">
+                    <label> Name </label>
+                    <input type="text" name="name" placeholder="Name" required>
+                    <label> Age </label>
+                    <input type="number" name="age" placeholder="Age" required>
+                    <label> Email </label>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <label> Password </label>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit"> Sign up </button>
+                    <label> {{message}} <a href="/login"> Sign in </a></label>
+                </form>
+                <p> {{>errorSign}} </p>
+            </div>
+        </div>
+    </body>
+    <script></script>
+</html>

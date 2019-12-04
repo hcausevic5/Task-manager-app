@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> My application </title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="icon" href="/img/logo.png">
+        <script src="/js/getTasks.js"></script>
+        <script src="/js/dragAndDrop.js"></script>
+        <script src="/js/cancelSession.js"></script>
+    </head>
+    <body onLoad="getTasks()">
+        {{>header}}
+        <div class="main_content">
+            <div class="leftMain">
+                <p> Set your tasks :) </p>
+                    <form class="tasksForm" action="/tasks" method="POST">
+                        <h1> Add new task </h1>
+                        <label> Task name </label>
+                        <input type="text" name="name" id="taskName" placeholder="Task name" required>
+                        <label> Description </label>
+                        <textarea rows="4" cols="50" name="description" placeholder="Write task description here..."> </textarea><br>
+                        <label> Task status: </label>
+                        <input type="radio" name="completed" value="uncompleted"> Uncompleted <br>
+                        <input type="radio" name="completed" value="inprogress"> In progress  <br>
+                        <input type="radio" name="completed" value="completed"> Completed <br>
+                        <button type="submit"> Add task </button>
+                    </form>
+            </div>
+            <div class="rightMain" id="rightMain">
+                <div class="notCompleted droppable" id="uncompleted" ondrop="dropIt(event)" ondragover="allowDrop(event)">
+                    <h3> Uncompleted tasks </h3>
+                </div>
+                <div class="inProgress droppable" id="inprogress" ondrop="dropIt(event)" ondragover="allowDrop(event)">
+                    <h3> Tasks in progress </h3>
+                </div>
+                <div class="completed droppable" id="completed" ondrop="dropIt(event)" ondragover="allowDrop(event)">
+                    <h3> Completed tasks </h3>
+                </div>
+                <div id="updateDiv">
+                    <form>
+                        <h1> Update task </h1>
+                        <label> Task name </label>
+                        <input type="text" id="updateName" name="name" id="taskName" placeholder="Task name">
+                        <label> Description </label>
+                        <textarea rows="4" id="updateTextArea" cols="50" name="description" placeholder="Write task description here..."> </textarea><br>
+                        <button id="cancelUpdate" onclick="cancelUpdate()"> Cancel </button>
+                        <button type="submit" onclick="saveTask(event)"> Update task </button>
+                    </form>
+                    <p id="par">Task updated!</p>
+                </div>
+                
+            </div>
+        </div>
+        {{>footer}}
+    </body>
+</html>

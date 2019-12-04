@@ -1,0 +1,474 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+input {
+    font-size: 14px;
+    border: 1px solid #eeeeee;
+    padding: 8px;
+    outline: none;
+}
+
+
+body {
+    line-height: 1.4;
+    height: 100vh;
+    width: 100vw;
+    background: #333744;
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-image: url('/img/geometric.png');
+    background-size: cover; */
+}
+
+h1 {
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #777;
+}
+
+button {
+    cursor: pointer;
+    padding: 8px;
+    background: #00ccff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #00b8e6;
+}
+
+button:disabled {
+    cursor: default;
+    background: #7c5cbf94;
+}
+
+.centered-form {
+    background: #333744;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-form__box {
+    box-shadow: 0px 0px 17px 1px #1D1F26;
+    background: #F7F7FA;
+    padding: 24px;
+    width: 350px;
+    border-radius: 15px;
+}
+
+/* .centered-form__box h1 {
+    text-align: center;
+} */
+.centered-form__box a {
+    text-decoration: none;
+}
+
+.centered-form__box p {
+    color: red;
+}
+
+.centered-form button {
+    width: 100%;
+}
+.centered-form input {
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    height: 10vh;
+    background:#1b1d24;
+}
+.header1{
+    width: 50vw;
+    margin: auto 0;
+    color: white;
+}
+
+.header1 h1 {
+    font-size: 30px;
+    margin-top:15px;
+}
+
+.header2 {
+    width: 50vw;
+}
+
+.header2 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    float: right;
+}
+
+.header2 li {
+    float: left;
+    padding: 27px;
+}
+
+.header li:hover {
+    background: #000000;
+
+}
+
+.header2 li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+
+.footer {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    background: #1b1d24;
+    height: 5vh;
+}
+
+.main_content {
+    display: flex;
+    height: 85vh;
+    background-image: url('/img/geometric.png');
+    background-size: cover;
+}
+
+.leftMain {
+    width: 25vw;
+    color: white;
+    margin-top: 30px;
+}
+
+.rightMain {
+    widows: 75vw;
+}
+.leftMain h1 {
+    font-weight: bold;
+}
+
+.leftMain p, h1 {
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.rightMain {
+    width: 75vw;
+}
+
+.tasksForm {
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 3px;
+    padding: 30px;
+    margin-top: 20px;
+    color: #1b1d24;
+    margin-left: 15px;
+    border-radius: 30px;
+    border: 1px solid white;
+}
+
+.tasksForm h1{
+    margin-left: 0;
+}
+
+.tasksForm label {
+    font-size: 16px;
+    color: #1b1d24;
+}
+
+.tasksForm textarea {
+    width: 100%;
+    font-size: 14px;
+}
+
+.tasksForm button {
+    margin-top: 30px;
+    width: 100%;
+}
+
+#taskName {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.rightMain {
+    padding: 30px;
+    display: flex;
+}
+
+.task {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    background: rgba(70, 71, 70, 0.65);
+    border-radius: 15px;
+    padding: 10px;
+    overflow-y: scroll;
+    margin-bottom: 5px;
+    border: 1px solid white;
+}
+
+.task p {
+    border-bottom: 1px solid white;
+}
+
+.rightMain h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+.notCompleted {
+    color: white;
+    padding: 10px;
+    border-radius: 30px;
+    width: 33%;
+    background: rgba(235, 95, 90, 0.65);
+    overflow-y: scroll;
+    border: 1px solid white;
+    overflow-x: inherit;
+}
+
+.inProgress {
+    color: white;
+    padding: 10px;
+    border-radius: 30px;
+    width: 33%;
+    background: rgba(81, 150, 240, 0.65);
+    overflow-y: scroll;
+    overflow-x: inherit;
+    margin-left: 10px;
+    border: 1px solid white;
+}
+.completed {
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 30px;
+    width: 33%;
+    background: rgba(179, 255, 204, 0.65);
+    overflow-y: scroll;
+    overflow-x: inherit;
+    margin-left: 10px;
+}
+
+.errorSign {
+    background: lightcoral;
+    margin-top: 10px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.errorSign p {
+    color: red;
+}
+
+.taskButton1 {
+    position: absolute;
+    font-size: 12px;
+    color: white;
+    background: rgba(141, 145, 207, 0.65);
+    bottom: 0;
+    left: 0;
+}
+
+.taskButton2 {
+    position: absolute;
+    font-size: 12px;
+    color: white;
+    bottom: 0;
+    right: 0;
+    background: rgba(235, 95, 90, 0.65);
+}
+
+#updateDiv {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 30px;
+    border: 1px solid white;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+}
+
+#updateDiv label {
+    color: black;
+    font-size: 16px;
+}
+
+#updateDiv button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#updateDiv h1{
+    margin-left: 0;
+}
+
+#updateDiv p {
+    visibility: hidden;
+    color: green;
+    margin-top: 10 px;
+}
+
+#updateName {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#cancelUpdate {
+    background: lightcoral;
+}
+
+#userData {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 60%;
+    height: 70%;
+    color: white;
+    transform: translate(-50%, -50%);
+    background: rgba(27, 29, 36, 0.8);
+    border-radius: 30px;
+    padding: 50px;
+    border: 1px solid white;
+}
+
+#userData h3 {
+    text-align: center;
+}
+
+ #image {
+    height: 70%;
+    width: 70%;
+    background: white;
+    border-radius: 40px;
+    background-image: url('/img/no-avatar.png');
+    background-size: cover;
+} 
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: 90%;
+    padding: 5%;
+}
+
+.photo  {
+    height: 100%;
+    width: 50%;
+}
+
+.data p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.photo form {
+    margin-top: 10%;
+}
+
+.photo input {
+    width: 70%;
+}
+
+.photo button {
+    width: 70%;
+}
+
+.changeData {
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    border-radius: 30px;
+}
+
+.changeData form {
+    padding: 30px;
+    color: white;
+}
+
+.changeData label {
+    color: white;
+    font-size: 16px;
+}
+.changeData input {
+    margin-bottom: 10px;
+}
+
+#changeCancel, #changeSubmit {
+    width: 100%;
+}
+
+#changeCancel {
+    background: lightcoral;
+}
+
+#img {
+    width: 100%;
+    height: 100%;
+}
+
+#submitButt {
+    cursor: pointer;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.ddata {
+    z-index: 1;
+}
+
+.edit {
+    display: flex;
+    margin-top: 30%;
+}
+
+#del1, #del2 {
+    background: lightcoral;
+}
+#del2 {
+    bottom: 0;
+}
+/* .edit {
+    margin-top: 95%;
+    display: flex;
+} */
+.data button {
+    width: 50%;
+}
+
+.updateDataDiv {
+    display: flex;
+    padding: 5px;
+}

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-env
+data:
+  .env: |-
+    DB_URL=mongodb://mongo/task-manager-api
+    SECRET_TOKEN=uiwefiuewffe132
+    SENDGRID_API_KEY=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
+    MYEMAIL='husein.97@hotmail.com'
