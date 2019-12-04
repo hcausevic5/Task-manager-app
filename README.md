@@ -13,6 +13,8 @@ Learning NodeJS-Docker-Kubernetes project
 ## Run application in Docker containers ##
 
 - Open terminal in the root of cloned folder
+- Create tagged NodeJS application image with command ``` docker build -t 'yourUsername'/node-app:version```
+- Push image to DockerHub repository with command ``` docker push 'yourUsername'/node-app:version```
 - Make sure your DB_URL begins with mongodb://mongodb/, cause you have to specify we are connecting to service
 - Run ``` docker-compose up ``` to start the application in container
 - Open localhost:8080
